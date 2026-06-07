@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Sonic Trailers</title>
+    <link rel="stylesheet" href="style.css"> <!-- use your existing CSS -->
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <style>
+        .contact-container {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .btn-submit {
+            background: #FF8C00;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn-submit:hover { background: #e67e00; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <h1 class="logo">Sonic<span>Trailers</span></h1>
+            <nav>
+                <a href="index.html">Trailers</a>
+                <a href="index.html#rates">Rates</a>
+                <a href="index.html#how">How It Works</a>
+                <a href="contact.html">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-container">
+        <h2>Contact Sonic Trailers</h2>
+        <p>Need a trailer quote or have a question? We’ll reply within 2 hours, 7am–7pm.</p>
+        
+        <!-- Using Web3Forms - free, unlimited, with hCaptcha support -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- Replace with your Web3Forms access key -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+            
+            <!-- Spam protection: honeypot -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+            
+            <!-- Redirect after submit -->
+            <input type="hidden" name="redirect" value="https://sonictrailers.co.za/thanks.html">
+            <input type="hidden" name="subject" value="New Sonic Trailers Enquiry">
+            <input type="hidden" name="from_name" value="Sonic Trailers Website">
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">WhatsApp / Cell *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="082 123 4567">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="trailer">Trailer Type</label>
+                <select id="trailer" name="trailer">
+                    <option value="">Select trailer</option>
+                    <option value="Single Axle">Single Axle</option>
+                    <option value="Double Axle">Double Axle</option>
+                    <option value="Cage Trailer">Cage Trailer</option>
+                    <option value="Car Trailer">Car Trailer</option>
+                    <option value="Not sure">Not sure - advise me</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dates">Hire Dates</label>
+                <input type="text" id="dates" name="dates" placeholder="e.g. 15-17 June 2026">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" required placeholder="What are you moving? Where to/from?"></textarea>
+            </div>
+
+            <!-- hCaptcha widget -->
+            <div class="form-group">
+                <div class="h-captcha" data-captcha="true"></div>
+            </div>
+
+            <button type="submit" class="btn-submit">Send Enquiry</button>
+        </form>
+
+        <div style="margin-top:40px;">
+            <p><strong>Or contact directly:</strong></p>
+            <p>WhatsApp: <a href="https://wa.me/27738440832">073 844 0832</a></p>
+            <p>Email: <a href="mailto:hire@sonictrailers.co.za">hire@sonictrailers.co.za</a></p>
+            <p>Location: Richards Bay | KZN</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sonic Trailers Richards Bay (Pty) Ltd</p>
+    </footer>
+</body>
+</html>
