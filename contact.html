@@ -4,43 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Sonic Trailers</title>
-    <link rel="stylesheet" href="style.css"> <!-- use your existing CSS -->
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+    <link rel="stylesheet" href="style.css">
     <style>
-        .contact-container {
-            max-width: 600px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        .btn-submit {
-            background: #FF8C00;
-            color: #fff;
-            border: none;
-            padding: 14px 28px;
-            font-size: 18px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-        .btn-submit:hover { background: #e67e00; }
+        .contact-container {max-width:600px;margin:60px auto;padding:0 20px}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;margin-bottom:6px;font-weight:600}
+        .form-group input,.form-group textarea,.form-group select{width:100%;padding:12px;border:1px solid #ccc;border-radius:6px;font-size:16px}
+        .form-group textarea{resize:vertical;min-height:120px}
+        .btn-submit{background:#FF8C00;color:#fff;border:none;padding:14px 28px;font-size:18px;border-radius:6px;cursor:pointer}
+        .btn-submit:hover{background:#e67e00}
     </style>
 </head>
 <body>
@@ -60,19 +32,13 @@
         <h2>Contact Sonic Trailers</h2>
         <p>Need a trailer quote or have a question? We’ll reply within 2 hours, 7am–7pm.</p>
         
-        <!-- Using Web3Forms - free, unlimited, with hCaptcha support -->
         <form action="https://api.web3forms.com/submit" method="POST">
-            
-            <!-- Replace with your Web3Forms access key -->
             <input type="hidden" name="access_key" value="5c3c10c1-4762-4547-9707-ed71c13d8f49">
-            
-            <!-- Spam protection: honeypot -->
-            <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
-            
-            <!-- Redirect after submit -->
+            <input type="checkbox" name="botcheck" style="display:none;">
             <input type="hidden" name="redirect" value="https://sonictrailers.co.za/thanks.html">
             <input type="hidden" name="subject" value="New Sonic Trailers Enquiry">
             <input type="hidden" name="from_name" value="Sonic Trailers Website">
+            <input type="hidden" name="debug" value="true">
 
             <div class="form-group">
                 <label for="name">Full Name *</label>
@@ -90,30 +56,8 @@
             </div>
 
             <div class="form-group">
-                <label for="trailer">Trailer Type</label>
-                <select id="trailer" name="trailer">
-                    <option value="">Select trailer</option>
-                    <option value="Single Axle">Single Axle</option>
-                    <option value="Double Axle">Double Axle</option>
-                    <option value="Cage Trailer">Cage Trailer</option>
-                    <option value="Car Trailer">Car Trailer</option>
-                    <option value="Not sure">Not sure - advise me</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="dates">Hire Dates</label>
-                <input type="text" id="dates" name="dates" placeholder="e.g. 15-17 June 2026">
-            </div>
-
-            <div class="form-group">
                 <label for="message">Message *</label>
                 <textarea id="message" name="message" required placeholder="What are you moving? Where to/from?"></textarea>
-            </div>
-
-            <!-- hCaptcha widget -->
-            <div class="form-group">
-                <div class="h-captcha" data-sitekey="542ae810-ea04-4202-b21a-10c08f9a4a0a"></div>
             </div>
 
             <button type="submit" class="btn-submit">Send Enquiry</button>
