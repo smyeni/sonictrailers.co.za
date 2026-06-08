@@ -62,7 +62,7 @@
         <p>Need a trailer quote or have a question? We’ll reply within 2 hours, 7am–7pm.</p>
         
         <!-- Using Web3Forms - free, unlimited, with hCaptcha support -->
-        <form action="https://api.web3forms.com/submit" method="POST">
+        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
             
             <!-- Replace with your Web3Forms access key -->
             <input type="hidden" name="access_key" value="5c3c10c1-4762-4547-9707-ed71c13d8f49">
@@ -117,7 +117,9 @@
                 <div class="h-captcha" data-sitekey="542ae810-ea04-4202-b21a-10c08f9a4a0a"></div>
             </div>
 
-            <button type="submit" style="text-align: center" class="btn-submit">Send Enquiry</button>
+            <div class="form-group" style="text-align: center;">
+                <button type="submit" style="text-align: center" class="btn-submit">Send Enquiry</button>
+            </div>
         </form>
 
         <div style="margin-top:40px;">
